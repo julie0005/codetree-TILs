@@ -13,15 +13,18 @@ public class Main {
         }
         int max = 0;
         boolean allPositive = true;
+        int sq = 0;
         for(int height = n; height >= 1; height--) {
             for (int width = m; width>= 1; width--) {
                 for (int hs = 0; hs + height <= n; hs++) {
                     for (int ws = 0; ws + width <= m; ws++) {
                         int he = hs + height;
                         int we = ws + width;
+                        //System.out.println("sq : " + (sq++));
                         allPositive = true;
                         for (int i = hs; i < he; i++) {
-                            for (int j = we; j < we; j++) {
+                            for (int j = ws; j < we; j++) {
+                                //System.out.println(board[i][j]);
                                 if (board[i][j] < 0) {
                                     allPositive = false;
                                     break;
@@ -29,17 +32,12 @@ public class Main {
                             }
                             if (!allPositive) break;
                         }
-                        if (allPositive) {
-                            System.out.println(width * height);
-                            break;
-                        }
+                        if (allPositive) max = Math.max(max, width*height);
                     }
-                    if (allPositive) break;
                 }
-                if (allPositive) break;
             }
-            if (allPositive) break;
         }
         if (!allPositive) System.out.println(-1);
+        else System.out.println(max);
     }
 }
