@@ -40,5 +40,6 @@ public class Main {
             }
             if (allPositive) break;
         }
+        if (!allPositive) System.out.println(-1);
     }
 }
