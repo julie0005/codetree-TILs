@@ -22,6 +22,7 @@ public class Main {
                 }
             }
         }
-        System.out.println(dp[m]);
+        int answer = dp[m] == Integer.MAX_VALUE ? -1 : dp[m];
+        System.out.println(answer);
     }
 }
