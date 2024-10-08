@@ -25,7 +25,7 @@ public class Main {
         }
 
         for (int i=0; i<n; i++) {
-            int idx = binarySearch(dp, 0, lis+1, arr[i], lis+1);
+            int idx = binarySearch(dp, 0, lis, arr[i], lis);
             if (idx==-1) dp[lis++] = arr[i];
             else dp[idx] = arr[i];
         }
