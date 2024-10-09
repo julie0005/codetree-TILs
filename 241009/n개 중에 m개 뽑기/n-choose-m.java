@@ -20,7 +20,7 @@ public class Main {
             if (i <= lastNum) continue;
             num.add(i);
             choose(idx+1, i);
-            num.remove(num.size()-1);
+            num.remove(idx);
         }
     }
     public static void main(String[] args) {
