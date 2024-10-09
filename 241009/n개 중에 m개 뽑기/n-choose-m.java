@@ -1,7 +1,6 @@
 import java.util.*;
 public class Main {
     static List<Integer> num = new ArrayList<>();
-    static List<String> seqs = new ArrayList<>();
     static int K,N;
     static void addToSeqs() {
         String str = "";
@@ -9,7 +8,7 @@ public class Main {
             str += num.get(i);
             if (i < num.size()-1) str+=" ";
         }
-        seqs.add(str);
+        System.out.println(str);
     }
     static void choose(int idx, int lastNum) {
         if (idx == N) {
@@ -30,9 +29,5 @@ public class Main {
         K = sc.nextInt();
         N = sc.nextInt();
         choose(0, 0);
-        Collections.sort(seqs);
-        for(String seq : seqs) {
-            System.out.println(seq);
-        }
     }
 }
