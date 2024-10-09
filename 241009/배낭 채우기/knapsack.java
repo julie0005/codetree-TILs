@@ -21,7 +21,11 @@ public class Main {
                 dp[i] = Math.max(dp[i], dp[i - crystal.weight] + crystal.value);
             }
         }
-        int answer = dp[m] == Integer.MIN_VALUE ? 0 : dp[m];
+
+        int answer = 0;
+        for (int i=0; i<=m; i++) {
+            answer = Math.max(answer, dp[i]);
+        }
         System.out.println(answer);
     }
 }
